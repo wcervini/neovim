@@ -30,7 +30,7 @@ set encoding=UTF-8
 set mouse=a
 
 
-call plug#begin("~/.config/vim/plugged")
+call plug#begin()
 Plug 'sainnhe/gruvbox-material'
 " Snippet Javascript
 Plug 'SirVer/ultisnips'
@@ -59,6 +59,22 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'nvim-lua/plenaryi.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'neoclide/coc-vetur'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'iamcco/coc-bootstrap-classname'
+
+Plug 'yaegassy/coc-volar'
+Plug 'yaegassy/coc-volar-tools'
+Plug 'yaegassy/vscode-markdown-langugeservice'
+Plug 'yaegassy/tailwindcss3'
+Plug 'yaegassy/coc-html-css-support'
+Plug 'yaegassy/coc-marksman'
+Plug 'yaegassy/coc-jsdoc'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 lua << EOF
@@ -137,7 +153,7 @@ lua << EOF
 
 EOF
 
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" Trigger configuration. You need to ch:CocInstall coc-gitange this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -176,24 +192,6 @@ let g:airline_right_alt_sep = ''
 "let g:airline_symbols.maxlinenr = '☰ '
 "let g:airline_symbols.dirty='⚡'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  let g:airline_filetype_overrides = {
      \ 'coc-explorer':  [ 'CoC Explorer', '' ],
      \ 'defx':  ['defx', '%{b:defx.paths[0]}'],
@@ -204,7 +202,7 @@ let g:airline_right_alt_sep = ''
      \ 'minibufexpl': [ 'MiniBufExplorer', '' ],
      \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ],
      \ 'startify': [ 'startify', '' ],
-     \ 'vim-plug': [ 'Plugins', '' ],
+     \ 'vim-plug': [ '"Plugins', '' ],
      \ 'vimfiler': [ 'vimfiler', '%{vimfiler#get_status_string()}' ],
      \ 'vimshell': ['vimshell','%{vimshell#get_status_string()}'],
     \ 'vaffle' : [ 'Vaffle', '%{b:vaffle.dir}' ],
@@ -289,6 +287,15 @@ nmap <leader>bl :buffers<cr>
 nmap <leader>bd :bd<cr>
 nmap <leader><tab> :bnext<cr>
 nmap <S-tab> :bpreviousr>
+
+nnoremap <A-j> :m .+1<CR>==
+vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+
+
 
 " Configuracion GRUVBOX
 let g:colorscheme='gruvbox-material'
