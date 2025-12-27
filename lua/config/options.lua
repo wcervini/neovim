@@ -14,4 +14,5 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.mouse = "a"
+vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
