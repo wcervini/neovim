@@ -1,13 +1,14 @@
 local k = vim.keymap.set
-k("n","<leader>bc" , ":bd<CR>")
-k("n","<leader>w", ":w<CR>")
-k("n","<leader>5", ":source %<CR>")
+k("n", "<leader>bc", ":bd<CR>")
+k("n", "<leader>w", ":w<CR>")
+k("n", "<leader>5", ":source %<CR>")
 k("n", "<Tab>", ":bnext<CR>")
-k("n","<S-Tab>",":bprevious<CR>")
-k("n","<C-n>","<cmd>NvimTreeToggle<CR>")
-k("n","<M-w>",":split<CR>")
-k("n","<M-v>",":split<CR>")
-k("n","<C-q>",":quit<CR>")
+k("n", "<S-Tab>", ":bprevious<CR>")
+k("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
+k("n", "<M-w>", ":split<CR>")
+k("n", "<M-v>", ":split<CR>")
+k("n", "<C-q>", ":quit<CR>")
+k('n', '<leader>fm', vim.lsp.buf.format, { desc = 'Format file' })
 
 local function move_lines(direction)
   local count = vim.v.count1
@@ -42,5 +43,5 @@ local function move_lines(direction)
     if mode == "i" then vim.cmd("startinsert") end
   end
 end
-vim.keymap.set({"n", "i", "v"}, "<A-j>", function() move_lines(">") end, {desc = "Move down"})
-vim.keymap.set({"n", "i", "v"}, "<A-k>", function() move_lines("<") end, {desc = "Move up"})
+vim.keymap.set({ "n", "i", "v" }, "<A-j>", function() move_lines(">") end, { desc = "Move down" })
+vim.keymap.set({ "n", "i", "v" }, "<A-k>", function() move_lines("<") end, { desc = "Move up" })
