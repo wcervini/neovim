@@ -1,0 +1,17 @@
+estos son los servers que requiero configurar
+lua_ls ✅
+vscode-markdown-languageserver
+vscode-html-languageserver
+gn-language-server
+docker-language-server
+withastro/language-tools
+Bash Language Server
+vscode-css-languageserver
+javascript-typescript
+make-lsp-vscode
+Pyright
+Rust Analyzer
+Tailwind Intellisense
+vuejs/vetur
+vuejs/language-tools
+emmet_language_server ✅

@@ -16,3 +16,4 @@ vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.shadafile = ""  -- Deshabilita ShaDa permanentemente
