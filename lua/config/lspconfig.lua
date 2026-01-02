@@ -1,6 +1,6 @@
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("pyright")
-vim.lsp.enable("emmet_laguage_server")
+vim.lsp.enable("emmet_language_server")
 vim.lsp.enable("astro")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("vue_ls")
