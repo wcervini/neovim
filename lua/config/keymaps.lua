@@ -1,53 +1,29 @@
 local k = vim.keymap.set
-k("n", "<leader>bc", ":bd<CR>")
-k("n", "<leader>w", ":w<CR>")
-k("n", "<leader>5", ":source %<CR>")
-k("n", "<Tab>", ":bnext<CR>")
-k("n", "<S-Tab>", ":bprevious<CR>")
-k("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
-k("n", "<M-w>", ":split<CR>")
-k("n", "<M-v>", ":vsplit<CR>")
-k("n", "<C-q>", ":quit<CR>")
-k("n", "<leader>ft", vim.lsp.buf.format, { desc = "Format file" })
+local opts = { noremap = true, silent = true }
 
-local function move_lines(direction)
-	local count = vim.v.count1
-	local mode = vim.fn.mode(1)
-	local lnum = vim.fn.line(".")
-	local last = vim.fn.line("$")
+k("n", "<leader>bc", ":bd<CR>", opts)
+k("n", "<leader>w", ":w<CR>", opts)
+k("n", "<leader>5", ":source %<CR>", opts)
+k("n", "<Tab>", ":bnext<CR>", opts)
+k("n", "<S-Tab>", ":bprevious<CR>", opts)
+k("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opts)
+k("n", "<M-w>", ":split<CR>", opts)
+k("n", "<M-v>", ":vsplit<CR>", opts)
+k("n", "<C-q>", ":quit<CR>", opts)
+k("n", "<leader>ft", vim.lsp.buf.format, { desc = "Format file" }, opts)
+-- Normal-mode commands
+k('n', '<A-j>', ':MoveLine(1)<CR>', opts)
+k('n', '<A-k>', ':MoveLine(-1)<CR>', opts)
+k('n', '<A-h>', ':MoveHChar(-1)<CR>', opts)
+k('n', '<A-l>', ':MoveHChar(1)<CR>', opts)
+k('n', '<leader>wf', ':MoveWord(1)<CR>', opts)
+k('n', '<leader>wb', ':MoveWord(-1)<CR>', opts)
 
-	if mode:match("^V") or mode:match("^") then
-		local start = vim.fn.line("'<")
-		local finish = vim.fn.line("'>")
-		if direction == ">" and finish + count >= last then
-			vim.notify("Ya al final del archivo", vim.log.levels.WARN)
-			return
-		elseif direction == "<" and start - count <= 1 then
-			vim.notify("Ya al inicio del archivo", vim.log.levels.WARN)
-			return
-		end
-		local target = (direction == ">") and ("'>+" .. (count - 1)) or ("'<-" .. (count + 1))
-		vim.cmd(":'<,'>move " .. target)
-		vim.cmd("normal! gv")
-	else
-		if direction == ">" and lnum + count >= last then
-			vim.notify("Ya al final del archivo", vim.log.levels.WARN)
-			return
-		elseif direction == "<" and lnum - count <= 1 then
-			vim.notify("Ya al inicio del archivo", vim.log.levels.WARN)
-			return
-		end
-		local target = (direction == ">") and ("+" .. count) or ("-" .. (count + 1))
-		vim.cmd(".move " .. target)
-		vim.cmd("normal! ==")
-		if mode == "i" then
-			vim.cmd("startinsert")
-		end
-	end
-end
-vim.keymap.set({ "n", "i", "v" }, "<A-j>", function()
-	move_lines(">")
-end, { desc = "Move down" })
-vim.keymap.set({ "n", "i", "v" }, "<A-k>", function()
-	move_lines("<")
-end, { desc = "Move up" })
+-- Visual-mode commands
+k('v', '<A-j>', ':MoveBlock(1)<CR>', opts)
+k('v', '<A-k>', ':MoveBlock(-1)<CR>', opts)
+k('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
+k('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
+
+-- Git keymaps
+k("n", "<leader>ga", "<cmd>G add %<cr>", opts)
