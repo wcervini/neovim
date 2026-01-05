@@ -10,6 +10,7 @@ k("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opt("Show/Hide NvimTree"))
 k("n", "<M-w>", ":split<CR>", opt("Split buffer Horizontal"))
 k("n", "<M-v>", ":vsplit<CR>", opt("Split buffer Vertical"))
 k("n", "<C-q>", ":quit<CR>", opt("Close current window"))
+k("n", "<C-Q>", ":quit!<CR>", opt("Close current window"))
 k("n", "<leader>ft", vim.lsp.buf.format, opt("format current buffer"))
 
 
@@ -32,3 +33,5 @@ k("n", "<leader>ga", "<cmd>Gwrite<cr>", opt("Git Add current file"))
 k("n", "<leader>gco", "<cmd>G commit<cr>", opt("Git Commit"))
 k("n", "<leader>gpu", "<cmd>G push<cr>", opt("Git Commit"))
 
+-- Emoji
+k("i", "<leader>se", "<cmd>Telescope emoji<cr>", opt("Git Commit"))
