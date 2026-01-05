@@ -32,6 +32,8 @@ k('v', '<A-l>', ':MoveHBlock(1)<CR>', opt(""))
 k("n", "<leader>ga", "<cmd>Gwrite<cr>", opt("Git Add current file"))
 k("n", "<leader>gco", "<cmd>G commit<cr>", opt("Git Commit"))
 k("n", "<leader>gpu", "<cmd>G push<cr>", opt("Git Commit"))
+k("n", "<leader>gt", "<cmd>GitTree<cr>", opt("Git Commit"))
+
 
 -- Emoji
 k("i", "<leader>se", "<cmd>Telescope emoji<cr>", opt("Git Commit"))
