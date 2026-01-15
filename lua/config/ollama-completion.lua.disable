@@ -1,4 +1,4 @@
-slocal M = {}
+local M = {}
 
 -- Configuración para autocompletado automático con Ollama
 function M.setup_auto_completion()

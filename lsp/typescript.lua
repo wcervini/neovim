@@ -6,7 +6,7 @@ return {
 	root_dir = require("lspconfig.util").root_pattern("tsconfig.json", "package.json", ".git"),
 	init_options = {
 		typescript = {
-			tsdk = "./node_modules/typescript/lib",
+			tsdk = "C:\Users\Underghround\AppData\Local\pnpm\global\5\node_modules\typescript\lib\"
 		},
 	},
 }
