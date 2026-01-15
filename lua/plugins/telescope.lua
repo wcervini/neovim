@@ -11,5 +11,7 @@ return {
 		{ "<leader>fm", "<cmd>Telescope keymaps<CR>", { desc = "Telescope keymaps" } },
 		{ "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git Status" } },
 	},
-	opts = {},
+	opts = {
+
+  },
 }
