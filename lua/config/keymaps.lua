@@ -1,16 +1,13 @@
 local opt = require("config.funciones").opts
 local k = vim.keymap.set
 
-k("n", "<leader>bc", ":bd<CR>",opt("Close current buffer"))
-k("n", "<leader>w", ":w<CR>", opt("Save Current buffer"))
-k("n", "<leader>5", ":source %<CR>", opt("Reload current buffer"))
+k("n", "<leader>w", ":bd<CR>",opt("Close current buffer"))
 k("n", "<Tab>", ":bnext<CR>", opt("Show next buffer"))
 k("n", "<S-Tab>", ":bprevious<CR>", opt("Show previous buffer"))
 k("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opt("Show/Hide NvimTree"))
 k("n", "<M-w>", ":split<CR>", opt("Split buffer Horizontal"))
 k("n", "<M-v>", ":vsplit<CR>", opt("Split buffer Vertical"))
 k("n", "<C-q>", ":quit<CR>", opt("Close current window"))
-k("n", "<C-Q>", ":quit!<CR>", opt("Close current window"))
 k("n", "<leader>ft", vim.lsp.buf.format, opt("format current buffer"))
 
 
