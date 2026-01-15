@@ -17,3 +17,11 @@ vim.opt.mouse = "a"
 vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.shadafile = ""  -- Deshabilita ShaDa permanentemente
+
+-- Esta opcion hace que el modo terminal sea powershell
+vim.opt.shell = "pwsh"          -- o "powershell" si usas la versión 5
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
+vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
