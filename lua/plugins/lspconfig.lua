@@ -1,5 +1,4 @@
 return {
-  "neovim/nvim-lspconfig",
-  opt={}
-  }
-
+	"neovim/nvim-lspconfig",
+	opt = {},
+}
