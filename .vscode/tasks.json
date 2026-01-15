@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Git: Abrir Borrador",
+            "type": "shell",
+            "command": "code .git/COMMIT_DRAFT",
+            "problemMatcher": []
+        },
+        {
+            "label": "Git: Commit con Borrador",
+            "type": "shell",
+            "command": "git commit -a -F .git/COMMIT_DRAFT -e",
+            "problemMatcher": []
+        }
+    ]
+}
