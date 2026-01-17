@@ -254,6 +254,25 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
+      local ls = require("luasnip")
+      local s = ls.snippet
+      local t = ls.text_node
+      local i = ls.insert_node
+
+      ls.add_snippets("gitcommit", {
+        s("feat", { t("feat: "), i(1, "description") }),
+        s("fix", { t("fix: "), i(1, "description") }),
+        s("docs", { t("docs: "), i(1, "description") }),
+        s("style", { t("style: "), i(1, "description") }),
+        s("refactor", { t("refactor: "), i(1, "description") }),
+        s("perf", { t("perf: "), i(1, "description") }),
+        s("test", { t("test: "), i(1, "description") }),
+        s("chore", { t("chore: "), i(1, "description") }),
+        s("ci", { t("ci: "), i(1, "description") }),
+        s("build", { t("build: "), i(1, "description") }),
+        s("feat-scope", { t("feat("), i(1, "scope"), t("): "), i(2, "description") }),
+        s("fix-scope", { t("fix("), i(1, "scope"), t("): "), i(2, "description") }),
+      })
     end,
   }
 }
