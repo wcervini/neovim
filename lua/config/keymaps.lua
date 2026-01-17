@@ -32,8 +32,8 @@ k("n", "<leader>gpu", "<cmd>G push<cr>", opt("Git Commit"))
 k("n", "<leader>gt", "<cmd>GitTree<cr>", opt("Git Commit"))
 
 -- Emoji
-k("i", "<leader>se", "<cmd>Telescope emoji<cr>", opt("Git Commit"))
-
+k("i", "<leader>je", "<cmd>Telescope emoji<cr>", opt("Emojis"))
+k("i", "<leader>ji", "<cmd>Telescope symbols sets=emoji,gitmoji<cr>", opt("Insertar Emoji"))
 -- Archivo Borrador Changelog
 k("n", "<leader>jn", f.abrir_borrador, { desc = "Anotar cambios (Journal)" })
 k("n", "<leader>jc", f.git_commit_borrador, { desc = "Commit usando notas" })
