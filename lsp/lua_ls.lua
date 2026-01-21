@@ -1,6 +1,6 @@
+--diagnostic disable: undefined-global
 return {
-	on_attach = on_atatch,
-	capabilities = capabilities,
+	capabilities = vim.lsspprotocol.make_client_capabilities(),
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	root_markers = {
