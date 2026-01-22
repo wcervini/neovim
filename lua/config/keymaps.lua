@@ -1,5 +1,5 @@
 local opt = require("config.funciones").opts
-local f = require("config.funciones")
+local f = require("config.commits_functions")
 local k = vim.keymap.set
 
 k("n", "<leader>w", ":bd<CR>", opt("Close current buffer"))

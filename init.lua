@@ -1,9 +1,10 @@
 vim.g.mapleader = " "
-require("config.lazy")
+vim.g.localmapleader = "\\"
 require("config.options")
 require("config.keymaps")
 require("config.commits_functions")
 require("config.autocmd")
+require("config.lazy")
 require("config.telescope_tree")
 require("config.lspconfig")
 require("plugins.autocomplete") -- ✅ Añade esta
