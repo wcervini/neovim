@@ -16,10 +16,11 @@ vim.opt.updatetime = 50
 vim.opt.mouse = "a"
 vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.shadafile = ""  -- Deshabilita ShaDa permanentemente
-
+vim.opt.shadafile = "" -- Deshabilita ShaDa permanentemente
+vim.opt.fileformat = "unix"
+vim.opt.encoding = "utf-8"
 -- Esta opcion hace que el modo terminal sea powershell
-vim.opt.shell = "pwsh"          -- o "powershell" si usas la versión 5
+vim.opt.shell = "pwsh" -- o "powershell" si usas la versión 5
 vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
