@@ -22,7 +22,16 @@ return {
 			markdown = { "prettierd", "prettier", stop_after_first = true },
 			svelte = { "prettierd", "prettier", stop_after_first = true },
 			go = { "goimports", "gofmt", stop_after_first = true },
+			djangohtml = { "djlint" },
+			htmldjango = { "djlint" },
+			jinja = { "djlint" },
+			jinja2 = { "djlint" },
 		},
 		format_on_save = { lsp_fallback = false },
+		formatters = {
+			djlint = {
+				args = { "--reformat", "--indent", "2", "-" },
+			},
+		},
 	},
 }
