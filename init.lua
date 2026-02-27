@@ -7,7 +7,6 @@ require("config.autocmd")
 require("config.lazy")
 require("config.telescope_tree")
 require("config.lspconfig")
-require("plugins.autocomplete") -- ✅ Añade esta
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "gitcommit",
