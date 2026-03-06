@@ -10,7 +10,7 @@ k("n", "<M-w>", ":split<CR>", opt("Split buffer Horizontal"))
 k("n", "<M-v>", ":vsplit<CR>", opt("Split buffer Vertical"))
 k("n", "<C-q>", ":quit<CR>", opt("Close current window"))
 k("n", "<leader>ft", vim.lsp.buf.format, opt("format current buffer"))
-
+k("n", "<leader>fc", "<cmd>bd<cr>", opt("Close current buffer"))
 -- Normal-mode commands
 k("n", "<A-j>", ":MoveLine(1)<CR>", opt("Move Line Down"))
 k("n", "<A-k>", ":MoveLine(-1)<CR>", opt("Move line Up"))
